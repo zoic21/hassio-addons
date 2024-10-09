@@ -1,46 +1,29 @@
-# Example Home Assistant add-on repository
+![Project Maintenance][maintenance-shield]
+[![License][license-shield]](LICENSE)
+[![GitHub Activity][commits-shield]][commits]
+[![GitHub Last Commit][last-commit-shield]][commits]
 
-This repository can be used as a "blueprint" for add-on development to help you get started.
+![GitHub Stars][stars-shield]
+![GitHub Watchers][watchers-shield]
+![GitHub Forks][forks-shield]
 
-Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
+[![Community Forum][forum-shield]][forum]
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fhome-assistant%2Faddons-example)
+# Open WebUI Addon for Home Assistant
 
-## Add-ons
+A [Home Assistant](https://home-assistant.io) add-on repository for [Open WebUI](https://openwebui.com).
 
-This repository contains the following add-ons
+[![Add Addon to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/lindehoff/addon-open-webui)
 
-### [Example add-on](./example)
+Please enter the subfolder [open-webui]open-webui/) for further details on the [CHANGELOG](open-webui/CHANGELOG.md) and [README](open-webui/README.md)
 
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
-
-_Example add-on to use as a blueprint for new add-ons._
-
-<!--
-
-Notes to developers after forking or using the github template feature:
-- While developing comment out the 'image' key from 'example/config.yaml' to make the supervisor build the addon
-  - Remember to put this back when pushing up your changes.
-- When you merge to the 'main' branch of your repository a new build will be triggered.
-  - Make sure you adjust the 'version' key in 'example/config.yaml' when you do that.
-  - Make sure you update 'example/CHANGELOG.md' when you do that.
-  - The first time this runs you might need to adjust the image configuration on github container registry to make it public
-  - You may also need to adjust the github Actions configuration (Settings > Actions > General > Workflow > Read & Write)
-- Adjust the 'image' key in 'example/config.yaml' so it points to your username instead of 'home-assistant'.
-  - This is where the build images will be published to.
-- Rename the example directory.
-  - The 'slug' key in 'example/config.yaml' should match the directory name.
-- Adjust all keys/url's that points to 'home-assistant' to now point to your user/fork.
-- Share your repository on the forums https://community.home-assistant.io/c/projects/9
-- Do awesome stuff!
- -->
-
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/lindehoff/addon-open-webui.svg
+[commits]: https://github.com/lindehoff/addon-open-webui/commits/master
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
+[forum]: https://community.home-assistant.io/?u=lindehoff
+[license-shield]: https://img.shields.io/github/license/lindehoff/addon-open-webui.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
+[last-commit-shield]: https://img.shields.io/github/last-commit/lindehoff/addon-open-webui.svg
+[stars-shield]: https://img.shields.io/github/stars/lindehoff/addon-open-webui.svg?style=social&label=Stars
+[forks-shield]: https://img.shields.io/github/forks/lindehoff/addon-open-webui.svg?style=social&label=Forks
+[watchers-shield]: https://img.shields.io/github/watchers/lindehoff/addon-open-webui.svg?style=social&label=Watchers
