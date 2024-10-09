@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://github.com/lindehoff/addon-open-webui/compare/v1.1.0...v1.2.0) (2024-10-09)
+
+
+### Features
+
+* **config:** test variable ([f2fec7a](https://github.com/lindehoff/addon-open-webui/commit/f2fec7a9abfa2e13a1bf87a27b50d2a6893549b4))
+
 # [1.1.0](https://github.com/lindehoff/addon-open-webui/compare/v1.0.1...v1.1.0) (2024-10-09)
 
 
