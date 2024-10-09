@@ -1,18 +1,21 @@
 name: "Open WebUI"
 description: "Open WebUI is an extensible, self-hosted interface for AI that adapts to your workflow, all while operating entirely offline."
-version: "v0.3.32"
+version: "v0.3.31"
 slug: "open-webui"
 arch:
   - aarch64
   - amd64
 url: https://openwebui.com
+environment:
+  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
 map:
   - type: addon_config
     read_only: False
     path: /app/backend/data
-
 options:
-  env_vars: []
+  openai_api_key: "OpenAI Key"
+schema:
+  message: "str?"
 image: ghcr.io/open-webui/open-webui
 init: false
 ingress: true
@@ -24,8 +27,3 @@ ports_description:
   8080/tcp: "Open WebUI"
 startup: application
 watchdog: tcp://[HOST]:[PORT:8080]
-
-schema:
-  env_vars:
-    - name: match(^GF_([A-Z0-9_])+$)
-      value: str
