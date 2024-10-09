@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0](https://github.com/lindehoff/addon-open-webui/compare/v1.0.1...v1.1.0) (2024-10-09)
+
+
+### Features
+
+* **config:** add env_vars ([aaede7d](https://github.com/lindehoff/addon-open-webui/commit/aaede7dfed14e6c2540067bff11379c15442f616))
+
 ## [1.0.1](https://github.com/lindehoff/addon-open-webui/compare/v1.0.0...v1.0.1) (2024-10-09)
 
 
