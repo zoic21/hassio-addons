@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/lindehoff/addon-open-webui/compare/v1.0.0...v1.0.1) (2024-10-09)
+
+
+### Bug Fixes
+
+* **config:** clean up ([31fd20a](https://github.com/lindehoff/addon-open-webui/commit/31fd20aa18ec2a74b62f93defff4e7d16d5db9df))
+
 # 1.0.0 (2024-10-09)
 
 
