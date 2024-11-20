@@ -1,17 +1,20 @@
 name: "Open WebUI"
 description: "Open WebUI is an extensible, self-hosted interface for AI that adapts to your workflow, all while operating entirely offline."
-version: "v0.3.31"
+version: "v0.3.35"
 slug: "open-webui"
 arch:
   - aarch64
   - amd64
 url: https://openwebui.com
 environment:
-  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
+#  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
+  ENABLE_OLLAMA_API: "False"
 map:
   - type: addon_config
     read_only: False
     path: /app/backend/data
+legacy: True
+host_network: True
 options:
   openai_api_key: "OpenAI Key"
 schema:
