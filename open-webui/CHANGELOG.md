@@ -1,5 +1,13 @@
 # Changelog
 
+# [1.3.0](https://github.com/lindehoff/addon-open-webui/compare/v1.2.0...v1.3.0) (2024-11-20)
+
+
+### Features
+
+* **openui:** update version to 0.3.35 ([f4e6600](https://github.com/lindehoff/addon-open-webui/commit/f4e6600adac287e9aabe693feafb192e91a84844))
+* **sem_ver:** fix sem_ver ([65d3d3d](https://github.com/lindehoff/addon-open-webui/commit/65d3d3d332aa36532a5e6c25cb005510e7c58eee))
+
 # [1.2.0](https://github.com/lindehoff/addon-open-webui/compare/v1.1.0...v1.2.0) (2024-10-09)
 
 
