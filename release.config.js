@@ -11,23 +11,17 @@ module.exports = {
         [
             "@semantic-release/release-notes-generator",
             {
-                "preset": "angular",
+                "preset": "conventionalcommits",
                 "writerOpts": {
-                    "transform": (commit) => {
-                        const updatedCommit = { ...commit };
-                        if (updatedCommit.body) {
-                            const lines = updatedCommit.body
-                                .split('\n')
-                                .map(line => line.trim())
-                                .filter(Boolean);
-                            updatedCommit.bodyLines = lines;
+                    "commitPartial": require('fs').readFileSync('.github/changelog-template.hbs', 'utf-8'),
+                    "finalizeContext": (context) => {
+                        for (const commitGroup of context.commitGroups) {
+                            for (const commit of commitGroup.commits) {
+                                commit.bodyLines = commit.body?.split('\n').filter((line) => line !== '') ?? [];
+                            }
                         }
-                        return updatedCommit;
-                    },
-                    "commitsSort": ["subject", "scope"],
-                    "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
-                    "template": require('fs').readFileSync('.github/changelog-template.hbs', 'utf-8')
+                        return context;
+                    }
                 },
                 "presetConfig": {
                     "types": [
