@@ -15,6 +15,8 @@ module.exports = {
                 "writerOpts": {
                     "transform": (commit) => {
                         const updatedCommit = { ...commit };
+                        
+                        // Handle body lines
                         if (updatedCommit.body) {
                             const lines = updatedCommit.body
                                 .split('\n')
@@ -22,6 +24,12 @@ module.exports = {
                                 .filter(Boolean);
                             updatedCommit.bodyLines = lines;
                         }
+                        
+                        // Ensure date is a proper Date object
+                        if (updatedCommit.date) {
+                            updatedCommit.date = new Date(updatedCommit.date).toISOString().split('T')[0];
+                        }
+                        
                         return updatedCommit;
                     },
                     "commitsSort": ["subject", "scope"],
