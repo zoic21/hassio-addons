@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.10.8](https://github.com/lindehoff/addon-open-webui/compare/v1.10.7...v1.10.8) (2025-01-03)
+
+
+### Bug Fixes
+
+* **changelog:** add handlebars-helpers for better formatting ([41c26b0](https://github.com/lindehoff/addon-open-webui/commit/41c26b09fb5f051d6e853ae9d0e43cb8a816b62b))
+    * - Add handlebars-helpers package for enhanced template functionality
+- Register split helper for proper line-by-line formatting
+- Update workflow to install required dependency
+* **changelog:** correct handlebars template syntax ([54c5129](https://github.com/lindehoff/addon-open-webui/commit/54c51298d7bc2c5fc4ef99e2e21cfb6ab829c6d9))
+    * - Fix invalid split syntax in commitPartial template
+- Use proper Handlebars helper syntax for string splitting
+- Keep consistent formatting and indentation
+* **changelog:** improve list formatting and indentation ([4dbba84](https://github.com/lindehoff/addon-open-webui/commit/4dbba84bbc383aecebd7cda85bc35a89b0409dfe))
+    * - Add proper line-by-line formatting for commit body and footer
+- Ensure consistent indentation for all bullet points
+- Remove extra whitespace between lines
+- Keep bullet point style consistent throughout entries
+* **changelog:** simplify template using built-in handlebars helpers ([91951be](https://github.com/lindehoff/addon-open-webui/commit/91951be3c1103d6e877be560d21ac3ac2288b656))
+    * - Replace custom helpers with built-in with helper
+- Remove dependency on handlebars-helpers package
+- Keep consistent formatting for commit messages
+
 ## [1.10.7](https://github.com/lindehoff/addon-open-webui/compare/v1.10.6...v1.10.7) (2025-01-03)
 
 
