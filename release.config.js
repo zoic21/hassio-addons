@@ -14,14 +14,15 @@ module.exports = {
                 "preset": "angular",
                 "writerOpts": {
                     "transform": (commit) => {
-                        if (commit.body) {
-                            const lines = commit.body
+                        const updatedCommit = { ...commit };
+                        if (updatedCommit.body) {
+                            const lines = updatedCommit.body
                                 .split('\n')
                                 .map(line => line.trim())
                                 .filter(Boolean);
-                            commit.bodyLines = lines;
+                            updatedCommit.bodyLines = lines;
                         }
-                        return commit;
+                        return updatedCommit;
                     },
                     "commitsSort": ["subject", "scope"],
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
