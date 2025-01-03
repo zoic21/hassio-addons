@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.10.5](https://github.com/lindehoff/addon-open-webui/compare/v1.10.4...v1.10.5) (2025-01-03)
+
+
+### Bug Fixes
+
+* **changelog:** configure commit template for full message inclusion
+  - Add commitPartial template to include commit body and footer
+- Improve formatting with proper indentation
+- Add commit groups sorting for consistent order
+- Remove unnecessary parserOpts configuration
+
 ## [1.10.4](https://github.com/lindehoff/addon-open-webui/compare/v1.10.3...v1.10.4) (2025-01-03)
 
 
