@@ -7,10 +7,16 @@
 {{#each commits}}
 * {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))
 
+{{#if bodyLines}}
 {{#each bodyLines}}
   {{this}}
-{{/each}}{{#each notes}}
+{{/each}}
+{{/if}}
+
+{{#if notes}}
+{{#each notes}}
   **BREAKING CHANGE**: {{text}}
 {{/each}}
+{{/if}}
 
 {{/each}} 
