@@ -1,5 +1,156 @@
 # Changelog
 
+## [1.10.9](https://github.com/lindehoff/addon-open-webui/compare/v1.10.8...v1.10.9) (2025-01-03)
+
+
+### Bug Fixes
+
+* **changelog:** adjust indentation in commit messages ([8b2e0a9](https://github.com/lindehoff/addon-open-webui/commit/8b2e0a94022e7aa22e468dab0703111347eba6fa))
+
+  - Add consistent four-space indentation for bullet points
+
+  - Improve readability of changelog entries
+
+  - Test new JavaScript-based configuration
+* **changelog:** correct handlebars template syntax ([4591959](https://github.com/lindehoff/addon-open-webui/commit/4591959dc8115282e3576406386fc0134d22675d))
+
+  - Fix nested if/each blocks in template
+
+  - Add proper condition for notes section
+
+  - Improve template formatting
+
+  - Remove problematic whitespace
+* **changelog:** ensure correct Handlebars template syntax ([03f5fb4](https://github.com/lindehoff/addon-open-webui/commit/03f5fb440ecd5359199357798a9aaf4ea8413a2f))
+
+  - Verify proper nesting of each blocks
+
+  - Remove unnecessary whitespace
+
+  - Ensure bodyLines and notes are processed correctly
+* **changelog:** ensure proper date handling ([b953449](https://github.com/lindehoff/addon-open-webui/commit/b9534492afcc4506a684a5b678e57a34dfe68fc4))
+
+  - Add date object conversion in transform function
+
+  - Fix TypeError with date handling
+
+  - Keep existing body line formatting
+
+  - Add code comments for better maintainability
+* **changelog:** handle date formatting in transform ([24bd122](https://github.com/lindehoff/addon-open-webui/commit/24bd12267dd04e3e3e7c1282f8d84d7566fd1ba3))
+
+  - Add proper date handling in transform function
+
+  - Convert dates to ISO format strings
+
+  - Keep same body line processing
+
+  - Add code structure comments
+* **changelog:** handle immutable commit object ([c903925](https://github.com/lindehoff/addon-open-webui/commit/c90392587054d7346ab8954963908ec87928deec))
+
+  - Create copy of commit object before modification
+
+  - Fix error with immutable object modification
+
+  - Keep same formatting and functionality
+
+  - Use spread operator for object cloning
+* **changelog:** handle immutable commit object in transform ([324b24c](https://github.com/lindehoff/addon-open-webui/commit/324b24c9e915fd74bf0ecda349c73d69b7a50584))
+
+  - Create copy of commit object before modification
+
+  - Keep same body line processing logic
+
+  - Return modified copy instead of original
+
+  - Fix "Cannot modify immutable object" error
+* **changelog:** implement stackoverflow solution ([5241090](https://github.com/lindehoff/addon-open-webui/commit/5241090d60580d0cf159c42373c69e9230eea067))
+
+  - Follow proven solution from Stack Overflow
+
+  - Add separate commit template file
+
+  - Use finalizeContext for body line processing
+
+  - Simplify template structure
+
+  [Source](https://stackoverflow.com/a/77548066)
+* **changelog:** remove problematic date handling ([b9b2ab9](https://github.com/lindehoff/addon-open-webui/commit/b9b2ab98b5cc98ccf8b70cae855346e2ce1779c9))
+
+  - Remove date handling from transform function
+
+  - Simplify header template
+
+  - Keep body line processing and formatting
+
+  - Remove date-related template parts
+* **changelog:** revert to angular preset ([198a708](https://github.com/lindehoff/addon-open-webui/commit/198a7085851c8b22f5cdc8ec4d3799dec736eaf4))
+
+  - Switch back to angular preset to avoid dependency issues
+
+  - Keep improved template and context handling
+
+  - Remove conventional-changelog-conventionalcommits dependency
+* **changelog:** revert to angular preset with custom template ([3a3fdb9](https://github.com/lindehoff/addon-open-webui/commit/3a3fdb9569958f74ff010d11c906d78b9332e4ee))
+
+  - Switch back to angular preset to avoid dependency issues
+
+  - Keep improved template formatting
+
+  - Use built-in string split in template
+
+  - Remove conventional-changelog-conventionalcommits dependency
+* **changelog:** simplify release notes configuration ([4a30a64](https://github.com/lindehoff/addon-open-webui/commit/4a30a64382ce53a8a01044337786098cfe9826b9))
+
+  - Switch to conventionalcommits preset
+
+  - Move template logic to mainTemplate
+
+  - Remove problematic transform function
+
+  - Simplify date handling with preset defaults
+* **changelog:** use custom template file ([b4b3b1f](https://github.com/lindehoff/addon-open-webui/commit/b4b3b1fc6efcec7461f42a997c683d9c02b13282))
+
+  - Add separate changelog template file
+
+  - Remove problematic date handling
+
+  - Simplify release notes generation
+
+  - Move template to dedicated handlebars file
+* **changelog:** use transform function for body formatting ([6288265](https://github.com/lindehoff/addon-open-webui/commit/628826587fb1f98465093c323009e1aaf3391dc5))
+
+  - Add transform function to pre-process commit body
+
+  - Remove string.split from template
+
+  - Keep same formatting and structure
+
+  - Simplify handlebars template logic
+* **changelog:** use transform function for commit formatting ([a8cde3e](https://github.com/lindehoff/addon-open-webui/commit/a8cde3e35d9d60ec28d36a03f12862f55d18ffc1))
+
+  - Replace custom helper with transform function
+
+  - Process commit body lines before template rendering
+
+  - Keep consistent indentation and formatting
+
+  - Fix Handlebars helper error
+* **release:** add conventional commits dependency ([1a0ae0d](https://github.com/lindehoff/addon-open-webui/commit/1a0ae0d08e30d8c2d4b51315d24dd7fdf1f2feca))
+
+  - Add conventional-changelog-conventionalcommits package
+
+  - Keep existing configuration and templates
+
+  - Required for conventionalcommits preset
+* **release:** add conventional commits dependency ([e1c198a](https://github.com/lindehoff/addon-open-webui/commit/e1c198a2e19c96b261a4874e3e9f4163aa4e1f16))
+
+  - Add conventional-changelog-conventionalcommits package installation
+
+  - Keep existing semantic-release configuration
+
+  - Ensure all required dependencies are installed
+
 ## [1.10.8](https://github.com/lindehoff/addon-open-webui/compare/v1.10.7...v1.10.8) (2025-01-03)
 
 
