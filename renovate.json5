@@ -4,7 +4,6 @@
     "config:recommended",
     ":dependencyDashboard",
     ":semanticCommits",
-    ":semanticCommitTypeAll(fix)",
     ":automergeAll",
     ":enablePreCommit",
   ],
@@ -24,6 +23,13 @@
       "automerge": true,
       "automergeType": "branch",
       "semanticCommitType": "chore"
+    },
+    {
+      "matchPaths": ["open-webui/config.yaml"],
+      "semanticCommitType": "feat",
+      "semanticCommitScope": "openui",
+      "extractRepoReleaseNotes": true,
+      "commitMessageExtra": "Release notes:\n{{{releaseNotes}}}"
     }
   ],
   minimumReleaseAge: "24 hours",
