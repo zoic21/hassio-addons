@@ -11,7 +11,8 @@
                 "preset": "angular",
                 "writerOpts": {
                     "commitsSort": ["subject", "scope"],
-                    "includeDetails": true
+                    "includeDetails": true,
+                    "headerPartial": "{{#if scope}}**{{scope}}:** {{/if}}{{subject}}{{#if body}}\n\n{{body}}{{/if}}{{#if footer}}\n\n{{footer}}{{/if}}"
                 }
             }
         ],
