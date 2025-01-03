@@ -16,10 +16,13 @@ module.exports = {
                     "commitsSort": ["subject", "scope"],
                     "includeDetails": true,
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n{{#with body}}\n{{#each (split this \"\\n\")}}\n    * {{this}}\n{{/each}}\n{{/with}}\n{{/if}}\n{{#if footer}}\n{{#with footer}}\n{{#each (split this \"\\n\")}}\n    * {{this}}\n{{/each}}\n{{/with}}\n{{/if}}",
-                    "helpers": {
-                        split: (str, sep) => str.split(sep)
-                    }
+                    "transform": (commit, context) => {
+                        if (commit.body) {
+                            commit.bodyLines = commit.body.split('\n').map(line => line.trim()).filter(Boolean);
+                        }
+                        return commit;
+                    },
+                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{/if}}\n{{#if footer}}\n    * {{footer}}\n{{/if}}"
                 },
                 "presetConfig": {
                     "types": [
