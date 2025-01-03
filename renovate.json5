@@ -7,7 +7,6 @@
     ":automergeAll",
     ":enablePreCommit",
   ],
-  includeReleaseNotes: true,
   customManagers: [
     {
       customType: "regex",
@@ -29,7 +28,7 @@
       "matchPaths": ["open-webui/config.yaml"],
       "semanticCommitType": "feat",
       "semanticCommitScope": "openui",
-      "commitMessageExtra": "Release notes:\n{{{releaseNotes}}}"
+      "commitBody": "Release notes: {{{releaseNotes}}}"
     }
   ],
   minimumReleaseAge: "12 hours",
