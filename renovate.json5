@@ -28,9 +28,9 @@
       "matchPaths": ["open-webui/config.yaml"],
       "semanticCommitType": "feat",
       "semanticCommitScope": "openui",
-      "extractRepoReleaseNotes": true,
+      "includeReleaseNotes": true,
       "commitMessageExtra": "Release notes:\n{{{releaseNotes}}}"
     }
   ],
-  minimumReleaseAge: "24 hours",
+  minimumReleaseAge: "12 hours",
 }
