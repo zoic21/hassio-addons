@@ -13,10 +13,20 @@ module.exports = {
             {
                 "preset": "angular",
                 "writerOpts": {
+                    "transform": (commit) => {
+                        if (commit.body) {
+                            const lines = commit.body
+                                .split('\n')
+                                .map(line => line.trim())
+                                .filter(Boolean);
+                            commit.bodyLines = lines;
+                        }
+                        return commit;
+                    },
                     "commitsSort": ["subject", "scope"],
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
                     "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
-                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if body}}\n{{#each body.split \"\\n\"}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
+                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
                     "headerPartial": "# {{version}}\n\n{{#if date}}## {{date}}{{/if}}\n",
                     "footerPartial": ""
                 },
