@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.10.7](https://github.com/lindehoff/addon-open-webui/compare/v1.10.6...v1.10.7) (2025-01-03)
+
+
+### Bug Fixes
+
+* **changelog:** improve formatting and use short commit hash ([5899f55](https://github.com/lindehoff/addon-open-webui/commit/5899f55bde981063804229e1c52ddf8ed46a3277))
+  * - Change to short commit hash in display while keeping full hash in links
+- Add bullet points for commit body and footer entries
+- Adjust indentation for better readability
+
 ## [1.10.6](https://github.com/lindehoff/addon-open-webui/compare/v1.10.5...v1.10.6) (2025-01-03)
 
 
