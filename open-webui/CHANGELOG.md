@@ -1,5 +1,9 @@
 # Changelog
 
+### Bug Fixes
+
+* **changelog:** include full commit message with body ([71ba6d5](https://github.com/lindehoff/addon-open-webui/commit/71ba6d5aff14e88c305d44c727e815159ceb8492))
+
 ## [1.10.2](https://github.com/lindehoff/addon-open-webui/compare/v1.10.1...v1.10.2) (2025-01-03)
 
 
