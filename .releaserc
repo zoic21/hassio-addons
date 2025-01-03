@@ -13,7 +13,7 @@
                     "commitsSort": ["subject", "scope"],
                     "includeDetails": true,
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n  * {{body}}\n{{/if}}\n{{#if footer}}\n  * {{footer}}\n{{/if}}"
+                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n  {{~#each body.split('\\n')~}}\n    * {{this}}\n  {{~/each~}}\n{{/if}}\n{{#if footer}}\n  {{~#each footer.split('\\n')~}}\n    * {{this}}\n  {{~/each~}}\n{{/if}}"
                 },
                 "presetConfig": {
                     "types": [
