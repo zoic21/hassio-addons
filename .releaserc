@@ -13,6 +13,9 @@
                     "commitsSort": ["subject", "scope"],
                     "includeDetails": true,
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
+                    "helpers": {
+                        "split": require('handlebars-helpers')().split
+                    },
                     "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n{{#each (split body \"\\n\")}}\n    * {{this}}\n{{/each}}\n{{/if}}\n{{#if footer}}\n{{#each (split footer \"\\n\")}}\n    * {{this}}\n{{/each}}\n{{/if}}"
                 },
                 "presetConfig": {
