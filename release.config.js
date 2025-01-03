@@ -1,4 +1,7 @@
-{
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
+module.exports = {
     "tagFormat": "v${version}",
     "branches": [
         "main"
@@ -13,7 +16,10 @@
                     "commitsSort": ["subject", "scope"],
                     "includeDetails": true,
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n{{#with body}}\n    * {{this}}\n{{/with}}\n{{/if}}\n{{#if footer}}\n{{#with footer}}\n    * {{this}}\n{{/with}}\n{{/if}}"
+                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if body}}\n{{#with body}}\n{{#each (split this \"\\n\")}}\n  * {{this}}\n{{/each}}\n{{/with}}\n{{/if}}\n{{#if footer}}\n{{#with footer}}\n{{#each (split this \"\\n\")}}\n  * {{this}}\n{{/each}}\n{{/with}}\n{{/if}}",
+                    "helpers": {
+                        split: (str, sep) => str.split(sep)
+                    }
                 },
                 "presetConfig": {
                     "types": [
@@ -43,4 +49,4 @@
         ],
         "@semantic-release/github"
     ]
-}
+}; 
