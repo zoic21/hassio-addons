@@ -11,7 +11,7 @@ module.exports = {
         [
             "@semantic-release/release-notes-generator",
             {
-                "preset": "conventionalcommits",
+                "preset": "angular",
                 "writerOpts": {
                     "commitPartial": require('fs').readFileSync('.github/changelog-template.hbs', 'utf-8'),
                     "finalizeContext": (context) => {
