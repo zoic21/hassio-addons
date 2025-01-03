@@ -5,12 +5,22 @@
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
+        [
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "angular",
+                "writerOpts": {
+                    "commitsSort": ["subject", "scope"],
+                    "includeDetails": true
+                }
+            }
+        ],
         [
             "@semantic-release/changelog",
             {
                 "changelogFile": "open-webui/CHANGELOG.md",
-                "changelogTitle": "# Changelog"
+                "changelogTitle": "# Changelog",
+                "changelogReleaseCount": 5
             }
         ],
         [
