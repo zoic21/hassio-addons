@@ -27,9 +27,7 @@ module.exports = {
                     "commitsSort": ["subject", "scope"],
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
                     "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
-                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
-                    "headerPartial": "# {{version}}\n",
-                    "footerPartial": ""
+                    "template": require('fs').readFileSync('.github/changelog-template.hbs', 'utf-8')
                 },
                 "presetConfig": {
                     "types": [
