@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.10.0](https://github.com/lindehoff/addon-open-webui/compare/v1.9.0...v1.10.0) (2025-01-03)
+
+
+### Bug Fixes
+
+* **renovate:** correct release notes config and update timing ([9a5847b](https://github.com/lindehoff/addon-open-webui/commit/9a5847ba227eb1e0d14dee5c426f8a91ed8889ec))
+
+
+### Features
+
+* **release:** enhance changelog generation with detailed PR content ([fd09ffe](https://github.com/lindehoff/addon-open-webui/commit/fd09ffe2a1a9ba67130dd39ef5108bc5bc197555))
+
 # [1.9.0](https://github.com/lindehoff/addon-open-webui/compare/v1.8.1...v1.9.0) (2025-01-03)
 
 
