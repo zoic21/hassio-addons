@@ -15,8 +15,6 @@ module.exports = {
                 "writerOpts": {
                     "transform": (commit) => {
                         const updatedCommit = { ...commit };
-                        
-                        // Handle body lines
                         if (updatedCommit.body) {
                             const lines = updatedCommit.body
                                 .split('\n')
@@ -24,19 +22,13 @@ module.exports = {
                                 .filter(Boolean);
                             updatedCommit.bodyLines = lines;
                         }
-                        
-                        // Ensure date is a proper Date object
-                        if (updatedCommit.date) {
-                            updatedCommit.date = new Date(updatedCommit.date).toISOString().split('T')[0];
-                        }
-                        
                         return updatedCommit;
                     },
                     "commitsSort": ["subject", "scope"],
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
                     "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
                     "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
-                    "headerPartial": "# {{version}}\n\n{{#if date}}## {{date}}{{/if}}\n",
+                    "headerPartial": "# {{version}}\n",
                     "footerPartial": ""
                 },
                 "presetConfig": {
