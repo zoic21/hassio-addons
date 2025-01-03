@@ -17,10 +17,14 @@ module.exports = {
                     "includeDetails": true,
                     "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
                     "transform": (commit, context) => {
-                        if (commit.body) {
-                            commit.bodyLines = commit.body.split('\n').map(line => line.trim()).filter(Boolean);
+                        const updatedCommit = { ...commit };
+                        if (updatedCommit.body) {
+                            updatedCommit.bodyLines = updatedCommit.body
+                                .split('\n')
+                                .map(line => line.trim())
+                                .filter(Boolean);
                         }
-                        return commit;
+                        return updatedCommit;
                     },
                     "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{/if}}\n{{#if footer}}\n    * {{footer}}\n{{/if}}"
                 },
