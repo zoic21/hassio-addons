@@ -11,37 +11,21 @@ module.exports = {
         [
             "@semantic-release/release-notes-generator",
             {
-                "preset": "angular",
-                "writerOpts": {
-                    "commitsSort": ["subject", "scope"],
-                    "includeDetails": true,
-                    "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "transform": (commit, context) => {
-                        const updatedCommit = { ...commit };
-                        
-                        // Ensure date is a proper Date object
-                        if (updatedCommit.date) {
-                            updatedCommit.date = new Date(updatedCommit.date);
-                        }
-                        
-                        // Handle body lines
-                        if (updatedCommit.body) {
-                            updatedCommit.bodyLines = updatedCommit.body
-                                .split('\n')
-                                .map(line => line.trim())
-                                .filter(Boolean);
-                        }
-                        
-                        return updatedCommit;
-                    },
-                    "commitPartial": "* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{#if bodyLines}}\n{{#each bodyLines}}\n    * {{this}}\n{{/each}}\n{{/if}}\n{{#if footer}}\n    * {{footer}}\n{{/if}}"
-                },
+                "preset": "conventionalcommits",
                 "presetConfig": {
                     "types": [
                         {"type": "feat", "section": "Features", "hidden": false},
                         {"type": "fix", "section": "Bug Fixes", "hidden": false},
                         {"type": "chore", "section": "Maintenance", "hidden": false}
                     ]
+                },
+                "writerOpts": {
+                    "commitsSort": ["subject", "scope"],
+                    "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
+                    "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
+                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if body}}\n{{#each (split body \"\n\")}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
+                    "headerPartial": "# {{version}}\n\n{{#if date}}## {{date}}{{/if}}\n",
+                    "footerPartial": ""
                 }
             }
         ],
@@ -49,8 +33,7 @@ module.exports = {
             "@semantic-release/changelog",
             {
                 "changelogFile": "open-webui/CHANGELOG.md",
-                "changelogTitle": "# Changelog",
-                "changelogReleaseCount": 5
+                "changelogTitle": "# Changelog"
             }
         ],
         [
