@@ -11,12 +11,12 @@
   customManagers: [
     {
       customType: "regex",
-      fileMatch: ["(^|/|.)config.yaml$"],
+      fileMatch: ["^open-webui/config\\.yaml$"],
       matchStrings: [
-        'datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sversion:\\s*"(?<currentValue>.*)"\\s',
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: \"(?<currentValue>.*?)\"\\s"
       ],
-      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-    },
+      datasourceTemplate: "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
+    }
   ],
   "packageRules": [
     {
@@ -24,7 +24,6 @@
       "automerge": true,
       "automergeType": "branch",
       "semanticCommitType": "chore"
-
     }
   ],
   minimumReleaseAge: "24 hours",
