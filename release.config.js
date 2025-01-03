@@ -11,21 +11,21 @@ module.exports = {
         [
             "@semantic-release/release-notes-generator",
             {
-                "preset": "conventionalcommits",
+                "preset": "angular",
+                "writerOpts": {
+                    "commitsSort": ["subject", "scope"],
+                    "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
+                    "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
+                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if body}}\n{{#each body.split \"\\n\"}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
+                    "headerPartial": "# {{version}}\n\n{{#if date}}## {{date}}{{/if}}\n",
+                    "footerPartial": ""
+                },
                 "presetConfig": {
                     "types": [
                         {"type": "feat", "section": "Features", "hidden": false},
                         {"type": "fix", "section": "Bug Fixes", "hidden": false},
                         {"type": "chore", "section": "Maintenance", "hidden": false}
                     ]
-                },
-                "writerOpts": {
-                    "commitsSort": ["subject", "scope"],
-                    "commitGroupsSort": ["Features", "Bug Fixes", "Maintenance"],
-                    "noteGroupsSort": ["BREAKING CHANGE", "UPDATES", "FIXES"],
-                    "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{title}}\n\n{{#each commits}}\n* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))\n{{~#if body}}\n{{#each (split body \"\n\")}}\n    * {{this}}\n{{/each}}\n{{~/if}}\n{{/each}}\n{{/each}}\n\n{{> footer}}",
-                    "headerPartial": "# {{version}}\n\n{{#if date}}## {{date}}{{/if}}\n",
-                    "footerPartial": ""
                 }
             }
         ],
