@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.10.6](https://github.com/lindehoff/addon-open-webui/compare/v1.10.5...v1.10.6) (2025-01-03)
+
+
+### Bug Fixes
+
+* **changelog:** restore commit links and fix indentation ([44036fae3a4fdb4e274446477b3275f843d0b01f](https://github.com/lindehoff/addon-open-webui/commit/44036fae3a4fdb4e274446477b3275f843d0b01f))
+    - Add back commit hash links to each changelog entry
+- Fix indentation of commit body and footer with proper spacing
+- Keep consistent formatting throughout the changelog
+
 ## [1.10.5](https://github.com/lindehoff/addon-open-webui/compare/v1.10.4...v1.10.5) (2025-01-03)
 
 
