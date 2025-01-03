@@ -1,0 +1,16 @@
+# {{version}}
+
+{{#each commitGroups}}
+
+### {{title}}
+
+{{#each commits}}
+* {{#if scope}}**{{scope}}:** {{/if}}{{subject}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))
+{{~#if body}}
+{{#each bodyLines}}
+    * {{this}}
+{{/each}}
+{{~/if}}
+{{/each}}
+
+{{/each}} 
