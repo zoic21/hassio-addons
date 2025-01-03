@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.9.0](https://github.com/lindehoff/addon-open-webui/compare/v1.8.1...v1.9.0) (2025-01-03)
+
+
+### Features
+
+* **renovate:** add release notes to version update PRs ([acf43ca](https://github.com/lindehoff/addon-open-webui/commit/acf43cacf1787d177fdd67a9cb0defa02a51d51e))
+
 ## [1.8.1](https://github.com/lindehoff/addon-open-webui/compare/v1.8.0...v1.8.1) (2025-01-03)
 
 
