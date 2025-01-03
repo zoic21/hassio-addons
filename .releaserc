@@ -11,8 +11,19 @@
                 "preset": "angular",
                 "writerOpts": {
                     "commitsSort": ["subject", "scope"],
-                    "includeDetails": true,
-                    "headerPartial": "{{#if scope}}**{{scope}}:** {{/if}}{{subject}}{{#if body}}\n\n{{body}}{{/if}}{{#if footer}}\n\n{{footer}}{{/if}}"
+                    "includeDetails": true
+                },
+                "presetConfig": {
+                    "types": [
+                        {"type": "feat", "section": "Features", "hidden": false},
+                        {"type": "fix", "section": "Bug Fixes", "hidden": false},
+                        {"type": "chore", "section": "Maintenance", "hidden": false}
+                    ]
+                },
+                "parserOpts": {
+                    "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"],
+                    "mergePattern": "^Merge pull request #(\\d+) from (.*)$",
+                    "mergeCorrespondence": ["id", "source"]
                 }
             }
         ],
