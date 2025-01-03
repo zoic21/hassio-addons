@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/lindehoff/addon-open-webui/compare/v1.10.0...v1.10.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* **renovate:** move includeReleaseNotes to root level ([5618c26](https://github.com/lindehoff/addon-open-webui/commit/5618c2603181d09a4b9d0d36659a412c6d5bb8e7))
+
 # [1.10.0](https://github.com/lindehoff/addon-open-webui/compare/v1.9.0...v1.10.0) (2025-01-03)
 
 
