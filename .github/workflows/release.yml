@@ -2,25 +2,31 @@ name: Release
 on:
   push:
     branches:
-      - main # or main
-
-# permissions:
-#   contents: read # for checkout
+      - main
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     environment: sem_ver
-    # permissions:
-    #   contents: write # to be able to publish a GitHub release
-    #   issues: write # to be able to comment on released issues
-    #   pull-requests: write # to be able to comment on released pull requests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          
+      - name: Install dependencies
+        run: |
+          npm install -g semantic-release
+          npm install -g @semantic-release/changelog
+          npm install -g @semantic-release/git
+          
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:
