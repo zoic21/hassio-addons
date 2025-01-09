@@ -1,35 +1,41 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    "config:recommended",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":automergeAll",
-    ":enablePreCommit",
+    'config:recommended',
+    ':dependencyDashboard',
+    ':semanticCommits',
+    ':automergeAll',
+    ':enablePreCommit',
   ],
   customManagers: [
     {
-      customType: "regex",
-      fileMatch: ["^open-webui/config\\.yaml$"],
-      matchStrings: [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: \"(?<currentValue>.*?)\"\\s"
+      customType: 'regex',
+      fileMatch: [
+        '^open-webui/config\\.yaml$',
       ],
-      datasourceTemplate: "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
-    }
+      matchStrings: [
+        '# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: "(?<currentValue>.*?)"\\s',
+      ],
+      datasourceTemplate: '{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}',
+    },
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchManagers": ["pre-commit"],
-      "automerge": true,
-      "automergeType": "branch",
-      "semanticCommitType": "chore"
+      matchManagers: [
+        'pre-commit',
+      ],
+      automerge: true,
+      automergeType: 'branch',
+      semanticCommitType: 'chore',
     },
     {
-      "matchPaths": ["open-webui/config.yaml"],
-      "semanticCommitType": "feat",
-      "semanticCommitScope": "openui",
-      "commitBody": "Release notes: {{{releaseNotes}}}"
-    }
+      matchFileNames: [
+        'open-webui/config.yaml',
+      ],
+      semanticCommitType: 'feat',
+      semanticCommitScope: 'openui',
+      commitBody: 'Release notes: {{{releaseNotes}}}',
+    },
   ],
-  minimumReleaseAge: "12 hours",
+  minimumReleaseAge: '12 hours',
 }
