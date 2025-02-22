@@ -17,7 +17,17 @@ module.exports = {
                     "finalizeContext": (context) => {
                         for (const commitGroup of context.commitGroups) {
                             for (const commit of commitGroup.commits) {
-                                commit.bodyLines = commit.body?.split('\n').filter((line) => line !== '') ?? [];
+                                const body = commit.body || '';
+                                const releaseNotesMatch = body.match(/Release notes:\n([\s\S]*?)(\n\S|$)/);
+                                
+                                if (releaseNotesMatch) {
+                                    commit.bodyLines = releaseNotesMatch[1]
+                                        .split('\n')
+                                        .filter(line => line.trim() !== '')
+                                        .map(line => line.replace(/^- /, ''));
+                                } else {
+                                    commit.bodyLines = commit.body?.split('\n').filter((line) => line !== '') ?? [];
+                                }
                             }
                         }
                         return context;
