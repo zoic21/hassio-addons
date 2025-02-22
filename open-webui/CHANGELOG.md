@@ -1,5 +1,20 @@
 # Changelog
 
+# [1.16.0](https://github.com/lindehoff/addon-open-webui/compare/v1.15.0...v1.16.0) (2025-02-22)
+
+
+### Features
+
+* **changelog:** process Renovate release notes in changelog ([e0769c7](https://github.com/lindehoff/addon-open-webui/commit/e0769c73cd9b46bcf984c794c19c50f4e2c17189))
+
+  - Extract release notes from commit bodies using regex pattern
+
+  - Format release notes as indented bullet points in changelog
+
+  - Preserve existing commit body processing for non-Renovate commits
+
+  - Remove markdown list markers from extracted release notes
+
 # [1.15.0](https://github.com/lindehoff/addon-open-webui/compare/v1.14.0...v1.15.0) (2025-02-22)
 
 
