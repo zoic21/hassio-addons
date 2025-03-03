@@ -1,5 +1,14 @@
 # Changelog
 
+# [1.17.0](https://github.com/lindehoff/addon-open-webui/compare/v1.16.0...v1.17.0) (2025-03-03)
+
+
+### Features
+
+* **openui:** update dependency open-webui/open-webui to v0.5.18 ([e94a1a8](https://github.com/lindehoff/addon-open-webui/commit/e94a1a8354e91d79e5543c373adcdc9fa5e7fc4a))
+
+  Release notes:
+
 # [1.16.0](https://github.com/lindehoff/addon-open-webui/compare/v1.15.0...v1.16.0) (2025-02-22)
 
 
