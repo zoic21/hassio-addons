@@ -1,7 +1,7 @@
 name: "Open WebUI"
 description: "Open WebUI is an extensible, self-hosted interface for AI that adapts to your workflow, all while operating entirely offline."
 # renovate: datasource=github-releases depName=open-webui/open-webui
-version: "v0.5.18"
+version: "0.5.18-1"
 slug: "open-webui"
 arch:
   - aarch64
@@ -10,6 +10,7 @@ url: https://openwebui.com
 environment:
 #  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
   ENABLE_OLLAMA_API: "False"
+  PORT: "$(bashio::config 'port')"
 map:
   - type: addon_config
     read_only: False
@@ -18,16 +19,19 @@ legacy: True
 host_network: True
 options:
   openai_api_key: "OpenAI Key"
+  port: 8080
 schema:
   message: "str?"
-image: ghcr.io/open-webui/open-webui
+  openai_api_key: "str"
+  port: "port"
+image: "ghcr.io/open-webui/open-webui:v0.5.18"
 init: false
 ingress: true
-ingress_port: 8080
+ingress_port: "$(bashio::config 'port')"
 ingress_stream: true
 ports:
-  8080/tcp: 8080
+  8080/tcp: "$(bashio::config 'port')"
 ports_description:
   8080/tcp: "Open WebUI"
 startup: application
-watchdog: tcp://[HOST]:[PORT:8080]
+watchdog: tcp://[HOST]:[PORT:$(bashio::config 'port')]

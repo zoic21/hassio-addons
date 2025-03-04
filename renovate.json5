@@ -17,6 +17,20 @@
         '# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: "(?<currentValue>.*?)"\\s',
       ],
       datasourceTemplate: '{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}',
+      extractVersionTemplate: '^v?(?<version>.*)$',
+    },
+    {
+      customType: 'regex',
+      fileMatch: [
+        '^open-webui/config\\.yaml$',
+      ],
+      matchStrings: [
+        'image: "ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)"',
+      ],
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'open-webui/open-webui',
+      extractVersionTemplate: '^v?(?<version>.*)$',
+      versioningTemplate: 'semver',
     },
   ],
   packageRules: [
@@ -37,5 +51,5 @@
       commitBody: 'Release notes: {{{releaseNotes}}}',
     },
   ],
-  minimumReleaseAge: '12 hours',
+  minimumReleaseAge: '4 hours',
 }
