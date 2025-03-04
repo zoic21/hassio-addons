@@ -22,10 +22,10 @@
     {
       customType: 'regex',
       fileMatch: [
-        '^open-webui/config\\.yaml$',
+        '^open-webui/build\\.yaml$',
       ],
       matchStrings: [
-        'image: "ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)"',
+        '  aarch64: "ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)"',
       ],
       datasourceTemplate: 'github-releases',
       depNameTemplate: 'open-webui/open-webui',
@@ -45,6 +45,7 @@
     {
       matchFileNames: [
         'open-webui/config.yaml',
+        'open-webui/build.yaml',
       ],
       semanticCommitType: 'feat',
       semanticCommitScope: 'openui',

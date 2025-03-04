@@ -10,7 +10,6 @@ url: https://openwebui.com
 environment:
 #  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
   ENABLE_OLLAMA_API: "False"
-  PORT: "$(bashio::config 'port')"
 map:
   - type: addon_config
     read_only: False
@@ -18,20 +17,19 @@ map:
 legacy: True
 host_network: True
 options:
-  openai_api_key: "OpenAI Key"
   port: 8080
+  env_vars: []
 schema:
-  message: "str?"
-  openai_api_key: "str"
-  port: "port"
-image: "ghcr.io/open-webui/open-webui:v0.5.18"
+  port: port
+  env_vars:
+    - name: match(^[A-Z0-9_]+$)
+      value: str
 init: false
 ingress: true
-ingress_port: "$(bashio::config 'port')"
+ingress_port: 8080
 ingress_stream: true
 ports:
-  8080/tcp: "$(bashio::config 'port')"
+  8080/tcp: 8080
 ports_description:
   8080/tcp: "Open WebUI"
 startup: application
-watchdog: tcp://[HOST]:[PORT:$(bashio::config 'port')]
