@@ -7,9 +7,6 @@ arch:
   - aarch64
   - amd64
 url: https://openwebui.com
-environment:
-#  OPENAI_API_KEY: "$(bashio::config 'openai_api_key')"
-  ENABLE_OLLAMA_API: "False"
 map:
   - type: addon_config
     read_only: False
@@ -25,11 +22,4 @@ schema:
     - name: match(^[A-Z0-9_]+$)
       value: str
 init: false
-ingress: true
-ingress_port: 8080
-ingress_stream: true
-ports:
-  8080/tcp: 8080
-ports_description:
-  8080/tcp: "Open WebUI"
 startup: application

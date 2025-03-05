@@ -84,4 +84,23 @@ If you have any issues or questions, please visit:
 
 - [Open WebUI Documentation](https://docs.openwebui.com/)
 - [Open WebUI GitHub Repository](https://github.com/open-webui/open-webui)
-- [Add-on GitHub Repository](https://github.com/lindehoff/addon-open-webui) 
+- [Add-on GitHub Repository](https://github.com/lindehoff/addon-open-webui)
+
+### Important Configuration Notes
+
+1. **First-Run Configuration**:
+   - Most environment variables can **only be set during initial setup** before first launch
+   - After initial configuration, many settings become "PersistentConfig" variables that must be modified through the Open WebUI interface
+
+2. **PersistentConfig Variables**:
+   - Marked with `Persistence` in documentation
+   - Once set, these values are stored internally and **won't** update from environment variables on restart
+   - Examples include authentication settings, default models, and UI configurations
+
+3. **Runtime Modifiable Variables**:
+   - Non-PersistentConfig variables can be updated by:
+     1. Editing environment variables in addon configuration
+     2. Restarting the addon
+   - These typically include service connections and API endpoints
+
+For a complete list of PersistentConfig variables, see [Open WebUI's official documentation](https://docs.openwebui.com/getting-started/env-configuration#appbackend).
