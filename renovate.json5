@@ -12,20 +12,11 @@
       customType: 'regex',
       fileMatch: [
         '^open-webui/config\\.yaml$',
-      ],
-      matchStrings: [
-        '# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: "(?<currentValue>.*?)"\\s',
-      ],
-      datasourceTemplate: '{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}',
-      extractVersionTemplate: '^v?(?<version>.*)$',
-    },
-    {
-      customType: 'regex',
-      fileMatch: [
         '^open-webui/build\\.yaml$',
       ],
       matchStrings: [
-        '  aarch64: "ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)"'
+        '# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: "(?<currentValue>.*?)"\\s',
+        '  aarch64: ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)\\n  # renovate: datasource=github-releases depName=open-webui/open-webui\\n  amd64: ghcr.io/open-webui/open-webui:v(?<currentValue>.*?)\\n'
       ],
       datasourceTemplate: 'github-releases',
       depNameTemplate: 'open-webui/open-webui',
