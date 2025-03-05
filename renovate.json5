@@ -22,7 +22,8 @@
       customType: 'regex',
       fileMatch: ['^open-webui/build\\.yaml$'],
       matchStrings: [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*open-webui:(?<currentValue>.*?)\\s"
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s*aarch64.*open-webui:(?<currentValue>.*?)\\s"
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s*amd64.*open-webui:(?<currentValue>.*?)\\s"
       ],
       datasourceTemplate: 'github-releases',
       depNameTemplate: 'open-webui/open-webui',
