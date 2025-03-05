@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.11](https://github.com/lindehoff/addon-open-webui/compare/v1.18.10...v1.18.11) (2025-03-05)
+
+
+### Bug Fixes
+
+* renovate ([afe2837](https://github.com/lindehoff/addon-open-webui/commit/afe2837a837a657cae66ef77e4f77703d277c310))
+
 ## [1.18.10](https://github.com/lindehoff/addon-open-webui/compare/v1.18.9...v1.18.10) (2025-03-05)
 
 
