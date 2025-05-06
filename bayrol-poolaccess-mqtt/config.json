@@ -3,7 +3,7 @@
   "description": "Easily connect Bayrol Poolaccess to Home-Assistant.",
   "image" : "zoic21/bayrol-poolaccess-mqtt",
   "url": "https://github.com/zoic21/bayrol-poolaccess-mqtt.git",
-  "version": "1.3.3-dev.20250506075703",
+  "version": "1.3.3-dev.20250506082638",
   "author": "zoic21",
   "license": "MIT",
   "slug": "bayrol-poolaccess-mqtt",
