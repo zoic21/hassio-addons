@@ -10,24 +10,28 @@
   customManagers: [
     {
       customType: 'regex',
-      fileMatch: ['^open-webui/config\\.yaml$'],
+      managerFilePatterns: [
+        '/^open-webui/config\\.yaml$/',
+      ],
       matchStrings: [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: \"(?<currentValue>.*?)\"\\s"
+        '# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sversion: "(?<currentValue>.*?)"\\s',
       ],
       datasourceTemplate: 'github-releases',
       depNameTemplate: 'open-webui/open-webui',
-      extractVersionTemplate: '^v?(?<version>.*)$'
+      extractVersionTemplate: '^v?(?<version>.*)$',
     },
     {
       customType: 'regex',
-      fileMatch: ['^open-webui/build\\.yaml$'],
+      managerFilePatterns: [
+        '/^open-webui/build\\.yaml$/',
+      ],
       matchStrings: [
-        "#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)\\s*\\w*(arch64|amd64): .*:v(?<currentValue>.*)"
+        '#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)\\s*\\w*(arch64|amd64): .*:v(?<currentValue>.*)',
       ],
       datasourceTemplate: 'github-releases',
       depNameTemplate: 'open-webui/open-webui',
-      extractVersionTemplate: '^v?(?<version>.*)$'
-    }
+      extractVersionTemplate: '^v?(?<version>.*)$',
+    },
   ],
   packageRules: [
     {
