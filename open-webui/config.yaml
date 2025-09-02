@@ -3,7 +3,7 @@ description: "Open WebUI is an extensible, self-hosted interface for AI that ada
 version: "0.6.26"
 ingress: true
 ingress_port: 8080
-ingress_stream: true
+ingress_stream: false
 slug: "open-webui"
 arch:
   - aarch64

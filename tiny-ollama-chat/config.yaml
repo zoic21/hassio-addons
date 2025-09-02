@@ -1,0 +1,29 @@
+name: "Tiny Ollama Chat"
+description: "A lightweight and efficient UI for interacting with Ollama models locally. This application provides a simple yet powerful interface for chatting with AI models through Ollama."
+version: "0.1"
+slug: "Tiny Ollama Chat"
+arch:
+  - aarch64
+  - amd64
+url: https://github.com/anishgowda21/tiny-ollama-chat
+map:
+  - type: addon_config
+    read_only: False
+    path: /app/data
+image: ghcr.io/anishgowda21/tiny-ollama-chat
+init: false
+ingress: true
+legacy: true
+video: true
+ingress_port: 8080
+ingress_stream: true
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: "Tiny Ollama Chat web access"
+options:
+  OLLAMA_URL: http://host.docker.internal:11434
+schema:
+  OLLAMA_URL: str
+startup: application
+watchdog: tcp://[HOST]:[PORT:8080]
