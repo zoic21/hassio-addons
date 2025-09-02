@@ -1,7 +1,9 @@
 name: "Open WebUI"
 description: "Open WebUI is an extensible, self-hosted interface for AI that adapts to your workflow, all while operating entirely offline."
-# renovate: datasource=github-releases depName=open-webui/open-webui
 version: "0.6.26"
+ingress: true
+ingress_port: 8080
+ingress_stream: true
 slug: "open-webui"
 arch:
   - aarch64
@@ -12,14 +14,14 @@ map:
     read_only: False
     path: /app/backend/data
 legacy: True
-host_network: True
 options:
-  port: 8080
   env_vars: []
 schema:
-  port: port
   env_vars:
     - name: match(^[A-Z0-9_]+$)
       value: str
 init: false
 startup: application
+watchdog: tcp://[HOST]:[PORT:8080]
+ports:
+  8080/tcp: 8080
