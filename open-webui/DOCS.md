@@ -10,7 +10,7 @@ Follow these steps to install the add-on:
 
 1. Navigate to the Home Assistant Add-on Store
 2. Click on the three dots in the upper right corner and select "Repositories"
-3. Add the repository URL: `https://github.com/lindehoff/addon-open-webui`
+3. Add the repository URL: `https://github.com/zoic21/addon-open-webui`
 4. Find the "Open WebUI" add-on in the list and click on it
 5. Click "Install"
 
@@ -84,7 +84,7 @@ If you have any issues or questions, please visit:
 
 - [Open WebUI Documentation](https://docs.openwebui.com/)
 - [Open WebUI GitHub Repository](https://github.com/open-webui/open-webui)
-- [Add-on GitHub Repository](https://github.com/lindehoff/addon-open-webui)
+- [Add-on GitHub Repository](https://github.com/zoic21/addon-open-webui)
 
 ### Important Configuration Notes
 
