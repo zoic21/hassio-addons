@@ -1,10 +1,10 @@
-# Ollama Addon for Home Assistant
+# Ollama ROCM Addon for Home Assistant
 
-Please note that this addon runs with CPU acceleration or experimental Nvidia GPU Support (please report if it works for you!). For ROCm the support is still pending.
+Please note that this addon runs with CPU acceleration or experimental AMD ROCM
 
 ## Model Directory
 
-All downloaded models are stored `/share/ollama` by default. For historic reasons you can also configure it for `/config/ollama`. Please make sure that you have sufficient space available.
+All downloaded models are stored `/share/ollama_rocm` by default. For historic reasons you can also configure it for `/config/ollama_rocm`. Please make sure that you have sufficient space available.
 
 ## Ollama Integration
 
