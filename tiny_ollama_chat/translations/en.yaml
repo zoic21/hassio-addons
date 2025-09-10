@@ -1,4 +1,0 @@
-configuration:
-  OLLAMA_URL:
-    name: OLLAMA_URL
-    description: URL of ollama
