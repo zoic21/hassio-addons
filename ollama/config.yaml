@@ -4,6 +4,7 @@ description: "Get up and running with large language models."
 version: "0.11.8"
 slug: "ollama"
 arch:
+  - aarch64
   - amd64
 url: https://ollama.com
 map:
