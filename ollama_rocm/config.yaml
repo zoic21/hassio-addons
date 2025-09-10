@@ -10,7 +10,7 @@ url: https://ollama.com
 map:
   - config:rw
   - share:rw
-image: docker.io/ollama/ollama
+image: docker.io/ollama/ollama:rocm
 init: false
 ingress: true
 legacy: true
